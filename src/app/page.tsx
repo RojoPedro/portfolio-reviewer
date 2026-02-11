@@ -38,7 +38,8 @@ export default function Home() {
 
   const handleReviewSubmit = async (data: FormData) => {
     if (credits !== null && credits < 1) {
-      alert("Insufficient credits. Please contact support to top up.");
+      // alert("Insufficient credits. Please contact support to top up.");
+      router.push('/pricing');
       return;
     }
 
@@ -121,6 +122,9 @@ export default function Home() {
             <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
               Ruthless Recruiter
             </h1>
+            <a href="/pricing" className="ml-4 text-sm font-medium text-gray-400 hover:text-white transition-colors border border-white/10 px-3 py-1 rounded-full bg-white/5 hover:bg-white/10">
+              Pricing
+            </a>
           </div>
 
           <div className="flex items-center gap-4">

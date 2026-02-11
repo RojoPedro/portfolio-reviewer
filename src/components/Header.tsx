@@ -1,4 +1,4 @@
-import React from 'react';
+import Link from 'next/link';
 import { Skull } from 'lucide-react';
 
 const Header = () => {
@@ -10,7 +10,10 @@ const Header = () => {
                     Ruthless Recruiter
                 </h1>
             </div>
-            <nav>
+            <nav className="flex items-center gap-6">
+                <Link href="/pricing" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    Pricing
+                </Link>
                 <a
                     href="https://github.com"
                     target="_blank"

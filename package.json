@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@google-cloud/vertexai": "^1.10.0",
+    "@stripe/stripe-js": "^8.7.0",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.95.3",
     "cheerio": "^1.2.0",
@@ -22,6 +23,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-markdown": "^10.1.0",
+    "stripe": "^20.3.1",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
