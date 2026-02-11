@@ -65,7 +65,7 @@ export default function LoginPage() {
             >
                 <div className="text-center mb-8">
                     <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-br from-white to-gray-400">
-                        Portfolio Reviewer
+                        Ruthless Recruiter
                     </h1>
                     <p className="text-gray-400 mt-2 text-sm">
                         {view === 'sign-in' ? 'Sign in to access your reviews' : 'Create an account to get 3 free credits'}

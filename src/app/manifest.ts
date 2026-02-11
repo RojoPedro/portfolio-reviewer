@@ -3,9 +3,9 @@ import { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Portfolio Reviewer AI',
-        short_name: 'Reviewer AI',
-        description: 'AI-powered Portfolio and CV Reviewer',
+        name: 'Ruthless Recruiter',
+        short_name: 'Ruthless',
+        description: 'Get brutal, honest feedback on your design portfolio.',
         start_url: '/',
         display: 'standalone',
         background_color: '#000000',

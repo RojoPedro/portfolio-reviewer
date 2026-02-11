@@ -97,9 +97,9 @@ export default function Home() {
         {/* Simplified Header with Auth Info */}
         <header className="container mx-auto px-6 py-6 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-500">
-              Portfolio Reviewer
-            </span>
+            <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
+              Ruthless Recruiter
+            </h1>
           </div>
 
           <div className="flex items-center gap-4">

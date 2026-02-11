@@ -7,7 +7,7 @@ const Header = () => {
             <div className="flex items-center gap-2">
                 <Skull className="w-8 h-8 text-red-500" />
                 <h1 className="text-xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-                    Ruthless Reviewer
+                    Ruthless Recruiter
                 </h1>
             </div>
             <nav>

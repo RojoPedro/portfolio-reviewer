@@ -5,13 +5,13 @@ import "./globals.css";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ruthless Portfolio Reviewer",
+  title: "Ruthless Recruiter AI",
   description: "Get an honest, AI-powered critique of your portfolio based on specific job offers.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "RuthlessReview",
+    title: "Ruthless Recruiter",
   },
 };
 
