@@ -29,8 +29,26 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## 🔐 Supabase Auth Setup (Required)
+This app uses Supabase for Authentication and tracking usage credits (3 free reviews/user).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1.  **Create a Supabase Project**: [database.new](https://database.new)
+2.  **Run SQL Migration**: Copy the content of `supabase_schema.sql` and run it in the Supabase **SQL Editor**.
+3.  **Get Credentials**: Go to **Project Settings > API**.
+4.  **Configure Env**: Add the following to your `.env.local` (or Vercel Env Vars):
+    ```env
+    NEXT_PUBLIC_SUPABASE_URL=your_project_url
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Deployment (Vercel)
+1.  **Import Repository**: Connect your GitHub repo to Vercel.
+2.  **Environment Variables**:
+    - Add `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+    - **Google Cloud Credentials**:
+      - Copy the **content** of your `service-account.json`.
+      - Create an Env Var named `GOOGLE_SERVICE_ACCOUNT_JSON` and paste the content as the value.
+3.  **Deploy**: Vercel will build and deploy the app.
+
+## 📱 PWA (Installable)
+The app is a Progressive Web App. You can install it on your Desktop or Mobile via the browser "Install" button.
