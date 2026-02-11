@@ -19,6 +19,8 @@ export const viewport = {
   themeColor: "#000000",
 };
 
+import ServiceWorkerRegister from "@/components/ServiceWorkerRegister";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={outfit.className}>{children}</body>
+      <head>
+        <meta name="apple-mobile-web-app-title" content="Ruthless" />
+      </head>
+      <body className={outfit.className}>
+        <ServiceWorkerRegister />
+        {children}
+      </body>
     </html>
   );
 }
