@@ -4,7 +4,7 @@ import Stripe from 'stripe';
 import { createClient } from '@/utils/supabase/server';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-    apiVersion: '2025-01-27.acacia',
+    apiVersion: '2026-01-28.clover' as any,
 });
 
 // You should set this env var to verify webhooks signature!
