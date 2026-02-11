@@ -53,6 +53,20 @@ export default function Home() {
         body: data,
       });
 
+      // Handle redirect to login (if session expired/missing)
+      if (response.redirected && response.url.includes('/login')) {
+        throw new Error("Session expired. Please log in again.");
+      }
+
+      // Check content type
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") === -1) {
+        // We got HTML or something else, likely a redirect that fetch followed properly
+        if (response.ok) {
+          throw new Error("Session expired or invalid response. Please refresh and log in.");
+        }
+      }
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.details || errorData.error || "Failed to fetch review");
@@ -64,9 +78,16 @@ export default function Home() {
       // Update credits locally
       setCredits(prev => (prev !== null ? prev - 1 : null));
 
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error fetching review:", error);
-      alert(`Error: ${error instanceof Error ? error.message : "Something went wrong"}`);
+
+      let message = "Something went wrong";
+      if (error instanceof Error) message = error.message;
+      if (error.name === 'TypeError' && error.message === 'Failed to fetch') {
+        message = "Network Error: Could not connect to server. Check your internet connection or try a valid PDF.";
+      }
+
+      alert(message);
     } finally {
       setIsLoading(false);
     }
