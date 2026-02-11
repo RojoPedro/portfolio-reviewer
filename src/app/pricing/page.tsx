@@ -3,9 +3,6 @@
 import React from 'react';
 import { Check, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
-import { loadStripe } from '@stripe/stripe-js';
-
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 export default function PricingPage() {
     const router = useRouter();
@@ -22,12 +19,12 @@ export default function PricingPage() {
 
             if (!response.ok) throw new Error('Network response was not ok');
 
-            const { sessionId } = await response.json();
-            const stripe = await stripePromise;
-
-            if (stripe && sessionId) {
-                const { error } = await stripe.redirectToCheckout({ sessionId });
-                if (error) console.error('Stripe redirect error:', error);
+            const { url } = await response.json();
+            if (url) {
+                window.location.href = url;
+            } else {
+                console.error('No checkout URL returned');
+                alert('Failed to start checkout. Please try again.');
             }
         } catch (err) {
             console.error('Subscription error:', err);
