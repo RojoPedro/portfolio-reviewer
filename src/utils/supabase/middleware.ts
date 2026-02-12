@@ -48,6 +48,7 @@ export async function updateSession(request: NextRequest) {
         !request.nextUrl.pathname.startsWith('/_next') &&
         !request.nextUrl.pathname.startsWith('/static') &&
         !request.nextUrl.pathname.startsWith('/pricing') &&
+        !request.nextUrl.pathname.startsWith('/api/webhooks') &&
         request.nextUrl.pathname !== '/favicon.ico'
     ) {
         // Allow landing page? The user said "Auth: Permettere agli utenti di registrarsi". 
